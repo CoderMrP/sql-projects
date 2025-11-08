@@ -35,6 +35,12 @@ Training Accuracy	1.00
 Test Accuracy	0.956
 Key Features	mean radius, mean concavity, area mean
 
+### 🔍 Feature Importance Insights
+After training the Random Forest Classifier, I analyzed the feature importance to understand which tumor characteristics influenced the model’s predictions the most.  
+The results showed that tumor size and shape irregularity — such as mean radius, mean area, and concavity worst — played a crucial role in determining malignancy.  
+This analysis highlighted how Random Forest can not only deliver high accuracy (95.6%) but also provide meaningful interpretability, which is essential for real-world medical applications.
+
+
 🧩 Key Learnings
 Difference between training vs. test performance
 Impact of standardization and feature scaling
