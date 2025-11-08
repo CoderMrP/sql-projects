@@ -56,6 +56,7 @@ How to visualize model results using Matplotlib
 Language: Python
 Libraries: Pandas | NumPy | Scikit-Learn | Matplotlib
 Environment: Google Colab
+
 🧬 Future Work: Image-Based Cancer Detection
 Plan to extend this project by integrating image processing and deep learning (CNNs) to classify cancerous cells directly from microscopic images.
 This will involve using OpenCV, TensorFlow, and Keras, enabling end-to-end automation from image input to diagnosis.
