@@ -122,11 +122,11 @@ This process identified the following optimal parameters:
 {'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
 
 
-🧬 Future Work: Image-Based Cancer Detection
+## 🧬 Future Work: Image-Based Cancer Detection
 Plan to extend this project by integrating image processing and deep learning (CNNs) to classify cancerous cells directly from microscopic images.
 This will involve using OpenCV, TensorFlow, and Keras, enabling end-to-end automation from image input to diagnosis.
 
 
-💬 Author
+## 💬 Author
 Paras Saini
 🎓 MSc Data Analytics | Berlin
