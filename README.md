@@ -1,132 +1,120 @@
-# 🧠 Breast Cancer Detection using Machine Learning
+🧠 Breast Cancer Detection using Machine Learning & Tableau Dashboard
 
-This project applies a **Random Forest Classifier** to detect whether a breast tumor is **malignant (cancerous)** or **benign (non-cancerous)** using diagnostic data from cell nuclei.  
-Built and tested in **Google Colab** using **Python, Scikit-Learn, and Matplotlib**.
-
----
-
-## 📂 Dataset
-
-**Source:** Breast Cancer Wisconsin (Diagnostic) Dataset  
-**Shape:** 569 rows × 30 features  
-
-- Each row → One patient’s tumor sample  
-- Each column → A numerical measurement (radius, texture, smoothness, concavity, etc.)  
-- **Target column:**  
-  - 0 = Malignant  
-  - 1 = Benign  
-
----
-
-## ⚙️ Workflow
-
-### 🔹 Data Loading & Exploration
-- Checked shape, null values, and data types  
-
-### 🔹 Data Cleaning & Preprocessing
-- Dropped unnecessary columns  
-- Separated features (X) and target (y)  
-- Split into training (80%) and test (20%) sets  
-- Scaled features using StandardScaler  
-
-### 🔹 Model Training
-- Algorithm: `RandomForestClassifier(random_state=42)`  
-- Trained on `X_train`, `y_train`  
-
-### 🔹 Model Evaluation
-- Accuracy on unseen data: **95.6%**  
-- Metrics: Accuracy score, classification report, confusion matrix  
-
-### 🔹 Visualization
-- Test accuracy bar chart (Matplotlib)  
-- Feature-importance ranking (Top 10 features)  
-
----
-
-## 📊 Results
-
-| Metric | Score |
-|---------|--------|
-| Training Accuracy | **1.00** |
-| Test Accuracy | **0.956** |
-| Key Features | mean radius, mean concavity, area mean |
-
----
-
-## 🔍 Feature Importance Insights
-
-After training the Random Forest Classifier, I analyzed which tumor characteristics influenced the model’s predictions the most.  
-The results showed that **tumor size and shape irregularity** — such as *mean radius*, *mean area*, and *concavity worst* — played a crucial role in determining malignancy.
-
-This analysis highlighted how Random Forest not only delivers **high accuracy (95.6%)** but also provides **meaningful interpretability**, which is essential for real-world medical applications.
-
----
-
-## 🧩 Key Learnings
-
-- Difference between training vs. test performance  
-- Impact of standardization and feature scaling  
-- Why Random Forest is robust against overfitting  
-- How to visualize model results using Matplotlib  
-
----
-
-## 🛠️ Tech Stack
-
-**Language:** Python  
-**Libraries:** Pandas | NumPy | Scikit-Learn | Matplotlib  
-**Environment:** Google Colab  
-
----
-
-## 📈 Model Performance Summary
-
-After training and hyperparameter tuning using **GridSearchCV**:
-
-| Metric | Score |
-|---------|--------|
-| Best Cross-Validation Accuracy | **96.04%** |
-| Test Accuracy (Unseen Data) | **95.6%** |
-| Precision (Malignant) | **95%** |
-| Recall (Malignant) | **93%** |
-| Precision (Benign) | **96%** |
-| Recall (Benign) | **97%** |
-
-✅ The model demonstrates strong and balanced performance across both classes, making it reliable for early-stage cancer detection tasks.
-
----
-
-## 🧠 Confusion Matrix Interpretation
-
-|                     | Predicted: Malignant | Predicted: Benign |
-|---------------------|---------------------|-------------------|
-| **Actual: Malignant** | 39 | 3 |
-| **Actual: Benign**    | 2 | 70 |
-
-The model correctly identified:
-- **39 out of 42 malignant tumors (93%)**
-- **70 out of 72 benign cases (97%)**
-
-This shows high **sensitivity** and **specificity**, minimizing false diagnoses — crucial for medical AI applications.
-
----
-
-## 🔧 Model Optimization Insights
-
-Applied **GridSearchCV** with **5-fold cross-validation** over **108 hyperparameter combinations** (totaling **540 model fits**).  
-This process identified the following optimal parameters:
+This project builds a Random Forest Classifier to detect whether a breast tumor is Malignant (cancerous) or Benign (non-cancerous) using the Breast Cancer Wisconsin Diagnostic dataset.
+The final predictions and evaluation metrics are visualized using an interactive Tableau Dashboard.
 
 
-{'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+🔗 Live Dashboard
+👉 View the Tableau Dashboard:
+https://public.tableau.com/app/profile/paras.saini6795
 
----
+
+📂 Dataset
+Breast Cancer Wisconsin (Diagnostic)
+569 rows × 30 features
+Each row = one patient’s tumor sample
+Each feature = cell nucleus measurements
+Target values:
+0 → Malignant
+1 → Benign
 
 
-## 🧬 Future Work: Image-Based Cancer Detection
-Plan to extend this project by integrating image processing and deep learning (CNNs) to classify cancerous cells directly from microscopic images.
-This will involve using OpenCV, TensorFlow, and Keras, enabling end-to-end automation from image input to diagnosis.
+⚙️ Project Workflow
 
----
-## 💬 Author
+1️⃣ Data Loading & Exploration
+Checked dataset shape, structure, missing values
+Viewed correlations & distributions
+
+2️⃣ Data Cleaning & Preprocessing
+Ignored unnecessary columns
+Prepared features (X) and labels (y)
+Train-test split (80% / 20%)
+Standardized features using StandardScaler
+
+3️⃣ Model Training
+Algorithm: RandomForestClassifier(random_state=42)
+Trained on scaled training data
+Extracted feature importances
+
+4️⃣ Model Evaluation
+Evaluated using:
+Accuracy
+Precision
+Recall
+F1 Score
+Confusion Matrix
+
+
+📈 Model Performance
+Metric	Score
+Training Accuracy	100%
+Test Accuracy	95.6%
+Best CV Accuracy (GridSearchCV)	96.04%
+Precision (Malignant)	95%
+Recall (Malignant)	93%
+Precision (Benign)	96%
+Recall (Benign)	97%
+
+
+🧠 Confusion Matrix (Test Results)
+Predicted: Malignant	Predicted: Benign
+Actual: Malignant	39	3
+Actual: Benign	2	70
+✔ Correctly identified 39/42 malignant tumors (93%)
+✔ Correctly identified 70/72 benign tumors (97%)
+✔ Balanced sensitivity & specificity → ideal for medical use cases
+
+
+📊 Tableau Dashboard Overview
+Visualized on Tableau Public with:
+KPI Cards
+Accuracy: 95.6%
+Precision: 95%
+Recall: 93%
+F1 Score: 94%
+Dashboard Visuals
+Confusion Matrix
+Prediction Distribution
+Actual vs Predicted Comparison
+Correct vs Incorrect Predictions
+
+
+🔍 Feature Importance Insights
+Random Forest identified key predictors:
+mean radius
+mean concavity
+area mean
+worst concavity
+worst perimeter
+These reflect tumor size, texture, and shape irregularity — medically meaningful indicators of malignancy.
+
+
+🧩 Key Learnings
+Difference between training vs test performance
+Importance of feature scaling
+Why Random Forest reduces overfitting
+Creating professional dashboards in Tableau
+Interpreting ML classification metrics
+
+
+🧬 Future Work
+1. Deep Learning for Image-Based Cancer Detection
+Use CNNs (TensorFlow/Keras)
+Detect cancer directly from microscopic images
+Combine image data + numeric features
+2. ROC & AUC Visualizations
+Add advanced evaluation metrics to Tableau.
+3. Streamlit Web App
+Allow users to upload measurements and get predictions.
+
+
+🛠 Tech Stack
+Python (Pandas, NumPy, Scikit-Learn, Matplotlib)
+Tableau Desktop + Tableau Public
+Google Colab
+
+
+👤 Author
 Paras Saini
-🎓 MSc Data Analytics | Berlin
+🎓 MSc Data Analytics, Berlin
+🔗 LinkedIn: https://www.linkedin.com/in/paras-saini-0a64b7250
