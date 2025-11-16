@@ -6,7 +6,7 @@ The final predictions and evaluation metrics are visualized using an interactive
 
 🔗 Live Dashboard
 👉 View the Tableau Dashboard:
-https://public.tableau.com/app/profile/paras.saini6795
+https://public.tableau.com/views/MLCanceerDetection/BreastCancerClassificationMLModelPerformanceDashboard?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 
 📂 Dataset
